@@ -1,0 +1,43 @@
+<head>
+  <script src="http://fb.me/react-0.13.0.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+</head>
+<body>
+
+</body>
+
+<script type="text/jsx">
+    console.log('hi');
+    //define a class
+    var Badge = React.createClass({
+
+
+        render() {
+
+
+            return <div><a href="#">Inbox <span className="badge">42</span></a>
+            <br />
+            <button className="btn btn-primary" type="button">
+                {this.props.title} <span className="badge">{this.props.number}</span>
+            </button>
+            </div>
+        }
+    });
+
+    var options = {
+        title: 'Inbox',
+        number: 42
+    };
+
+    //react, make instance of this class
+    var element = React.createElement(Badge, options);
+
+
+    //react, after render => place in document.body tag
+    // React.render(<Badge />, document.body);
+    React.render(element, document.body);
+
+
+</script>

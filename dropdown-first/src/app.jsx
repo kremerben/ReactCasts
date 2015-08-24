@@ -3,8 +3,10 @@ var Dropdown = require('./dropdown');
 
 
 var options = {
-title: "Choose a Dessert!",
-items: ['apple pie', 'cherry pie', 'pecan pie']
+
+    title: "Choose a dessert", //what shows up on button
+
+    items: [ 'Apple', 'Pecan', 'Pumpkin' ],
 
 };
 

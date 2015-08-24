@@ -2,7 +2,7 @@ var React= require('react');
 var Thumbnail = require('./thumbnail');
 
 
-module.exports = React.createClass({
+var List = React.createClass({
 
     render() {
         var list = this.props.thumbnailData.map(function(thumbnailProps) {
@@ -12,3 +12,5 @@ module.exports = React.createClass({
 
     }
 });
+
+module.exports = List;

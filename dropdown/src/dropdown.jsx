@@ -1,24 +1,49 @@
-// show button and list
-// will know when to show the list when user clicks on button
-
 var React = require('react');
-var Buttoned = require('./button');
-// var List = require('./list');
+var Button = require('./button');
+var ListItem = require('./list-item');
 
+//define a class
+var Dropdown = React.createClass({
 
-
-module.exports = React.createClass({
-
-    handleClick() {
-        alert('buttonclick');
+    getInitialState(){
+        return { open: false }
     },
 
 
-render() {
-    return <div className="dropdown">
-      <Buttoned whenClicked={this.handleClick} className='btn-default' title={this.props.title} subtitleClassName="caret" />
-    </div>
-}
+
+    handleClick() {
+        // alert('buttonclickers');
+        this.setState({ open: !this.state.open });
+        // using setState forces re-render
+    },
+    handleItemClick(item) {
+        console.log(item);
+        this.setState({
+            open: false,
+            itemTitle: item
+        })
+    },
 
 
+    render() {
+        var list = this.props.items.map(function(item) {
+            return <ListItem
+                    item={item}
+                    whenItemClicked={this.handleItemClick}
+                    className={this.state.itemTitle === item ? "active" : "" } />
+        }.bind(this));
+
+
+        return <div className="dropdown">
+        <Button whenClicked={this.handleClick}
+                className="btn-default"
+                title={this.state.itemTitle || this.props.title}
+                subTitleClassName="caret" />
+        <ul className={"dropdown-menu "+ (this.state.open ? "show" : "") }>
+            {list}
+        </ul>
+        </div>
+    }
 });
+
+module.exports = Dropdown;

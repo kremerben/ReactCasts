@@ -1,23 +1,20 @@
 var React= require('react');
 
-
-
 //define a class
-module.exports = React.createClass({
-
-    // added to dropdown.jsx
-    // handleClick() {
-    //     alert('buttonclick');
-    // },
-
+var Button = React.createClass({
 
 
     render() {
-        return <div>
-        <button onClick={this.props.whenClicked} className={"btn " + this.props.className} type="button">
+        return <button onClick={this.props.whenClicked} className={"btn "+ this.props.className} type="button">
             {this.props.title}
-            <span className={this.props.subTitleClassName}>{this.props.subTitle}</span>
+             <span className={this.props.subTitleClassName}>{this.props.subTitle}</span>
         </button>
-        </div>
     }
 });
+
+module.exports = Button;
+
+
+
+// react event types
+// http://facebook.github.io/react/docs/events.html

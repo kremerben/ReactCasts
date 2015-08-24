@@ -52,6 +52,7 @@
 
         render() {
             var list = this.props.thumbnailData.map(function(thumbnailProps) {
+                // {...thumbnailProps} passes all of thumbnailData to Thumbnail
                 return <Thumbnail {...thumbnailProps} />
             });
             return <div>{list}</div>

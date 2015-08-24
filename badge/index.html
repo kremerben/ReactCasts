@@ -17,11 +17,14 @@
         render() {
 
 
-            return <div><a href="#">Inbox <span className="badge">42</span></a>
-            <br />
-            <button className="btn btn-primary" type="button">
-                {this.props.title} <span className="badge">{this.props.number}</span>
-            </button>
+            return <div>
+                <br />
+                <a href="#">Static Number: <span className="badge">100</span></a>
+                <br />
+                <br />
+                <button className="btn btn-primary" type="button">
+                    {this.props.title} <span className="badge">{this.props.number}</span>
+                </button>
             </div>
         }
     });

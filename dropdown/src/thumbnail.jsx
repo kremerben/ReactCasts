@@ -1,7 +1,7 @@
 var React= require('react');
 var Badge = require('./badge');
 
-module.exports = React.createClass({
+var Thumbnail = React.createClass({
 
     render() {
 
@@ -19,3 +19,5 @@ module.exports = React.createClass({
         </div>
     }
 });
+
+module.exports = Thumbnail;

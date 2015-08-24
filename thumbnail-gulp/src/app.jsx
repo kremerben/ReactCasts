@@ -13,7 +13,7 @@ thumbnailData: [
     header: 'Thumbnail Label Text!'
     },
     {
-    title: 'Inbox',
+    title: 'Newish Inbox',
     number: 23,
     imageUrl: 'http://www.fillmurray.com/600/600',
     description: 'Learn Gulp',
